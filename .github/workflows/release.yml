@@ -17,9 +17,7 @@ jobs:
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/certificate-converter
           tags: |
-            type=sha
-            type=sha,format=long
-            type=raw,value={{date 'YYYYMMDD-HHmm'}}
+            type=raw,value={{branch}}-{{date 'YYYYMMDD-HHmm'}}
             type=raw,value=latest
             type=raw,value={{branch}}-latest
 
